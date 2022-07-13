@@ -1,0 +1,15 @@
+a=input('Please enter the string ')
+a=a.lower()
+d1={i+1:[] for i in range(len(a))}
+d1[0]=list(a)
+d={}
+for i in a:
+        if i not in d:
+                d[i]=1
+        else:
+                d[i]+=1
+        d1[d[i]].append(i)
+        d1[d[i]-1].remove(i)
+for i in range(len(a),0,-1):
+        for j in d1[i]:
+                print(j,'=',d[j],end=' ')
